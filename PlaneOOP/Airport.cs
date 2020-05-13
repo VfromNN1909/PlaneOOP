@@ -36,7 +36,7 @@ namespace PlaneOOP
             var planes = airport.Values;
             Console.WriteLine("Пункт назначения: " + planes[index].DestinationName);
             Console.WriteLine("Номер рейса: " + planes[index].FlightNumber);
-            Console.WriteLine("Пункт назначения: " + planes[index].DepartureTime);
+            Console.WriteLine("Время отправления: " + planes[index].DepartureTime);
         }
         public void GetPlanesInOneHour(DateTime time)
         {
@@ -61,6 +61,13 @@ namespace PlaneOOP
                     GetInfo(airport.IndexOfValue(plane));
                 }
             }
-        }      
+        }
+        public void GetAllPlanes()
+        {
+            foreach(Plane plane in airport.Values)
+            {
+                Console.WriteLine(plane);
+            }
+        }
     }
 }
